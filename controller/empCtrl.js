@@ -4,7 +4,7 @@ const mysqlConnect = require("../db/dbConn")
 const createEmp = (req,res) => {
     try {
         let newEmp = req.body
-        mysqlConnect.query('Insert into employee(name,email) values(?,?) ',[newEmp.name,newEmp.email],(errors,rows) => {
+        mysqlConnect.query('Insert into employee(name,email) values(?,?) ',[newEmp.name,newEmp.email,newEmp.phone],(errors,rows) => {
             if(errors){
                 console.log(errors)
             }else{
